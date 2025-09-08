@@ -1,4 +1,4 @@
- """
+"""
 Proyecto Avance 1 python
 Simulador de Facturas
 
@@ -84,6 +84,66 @@ Factura con los productos seleccionados, precios, subtotal, IVA y total a pagar.
 #Importamos la libreria math para realizar diferentes operaciones matematicas
 import math
 
+def productos_busqueda(codigo_producto):
+
+    while True:
+
+        if codigo_producto == producto_1[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_1[1]," Cantidad:",cantidad," Precio Unitario: $",producto_1[2])
+            total_producto = producto_1[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        if codigo_producto == producto_2[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_2[1]," Cantidad:",cantidad," Precio Unitario: $",producto_2[2])
+            total_producto = producto_2[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        if codigo_producto == producto_3[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_3[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+            total_producto = producto_3[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        if codigo_producto == producto_4[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_4[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+            total_producto = producto_4[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        if codigo_producto == producto_5[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_5[1]," Cantidad:",cantidad," Precio Unitario: $",producto_5[2])
+            total_producto = producto_5[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        else:
+            print("\nEl codigo no coincide, vuelva a intentarlo\n")
+            
+    print("El subtotal es: $",subtotal)
+
+    iva = subtotal*(16/100)
+
+    total_factura = subtotal+iva
+
+    print("\nIva: $",iva,"\nTotal: $",total_factura)
+
 #Establecemos los productos disponibles
 producto_1 = [1234567890123, "Sandwich Helado Clasico", 28]
 
@@ -97,64 +157,9 @@ producto_5 = [1837562094853, "Trident Negros chicles", 18]
 
 subtotal = 0
 
-#print("El producto",producto_1[1],"tiene un precio de: $",producto_1[2])
+#Establecemos el parametro para la funcion
 
-while True:
+codigo_producto = int(input("\nDigite el codigo del producto: "))
 
-    codigo_producto = int(input("\nDigite el codigo del producto: "))
-
-    if codigo_producto == producto_1[0]:
-
-        cantidad = int(input("\nDigite la cantidad de productos: "))
-        print("\nProducto:",producto_1[1]," Cantidad:",cantidad," Precio Unitario: $",producto_1[2])
-        total_producto = producto_1[2]*cantidad
-        subtotal +=total_producto
-        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
-        if dc == "No":
-            break
-    if codigo_producto == producto_2[0]:
-
-        cantidad = int(input("\nDigite la cantidad de productos: "))
-        print("\nProducto:",producto_2[1]," Cantidad:",cantidad," Precio Unitario: $",producto_2[2])
-        total_producto = producto_2[2]*cantidad
-        subtotal +=total_producto
-        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
-        if dc == "No":
-            break
-    if codigo_producto == producto_3[0]:
-
-        cantidad = int(input("\nDigite la cantidad de productos: "))
-        print("\nProducto:",producto_3[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
-        total_producto = producto_3[2]*cantidad
-        subtotal +=total_producto
-        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
-        if dc == "No":
-            break
-    if codigo_producto == producto_4[0]:
-
-        cantidad = int(input("\nDigite la cantidad de productos: "))
-        print("\nProducto:",producto_4[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
-        total_producto = producto_4[2]*cantidad
-        subtotal +=total_producto
-        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
-        if dc == "No":
-            break
-    if codigo_producto == producto_5[0]:
-
-        cantidad = int(input("\nDigite la cantidad de productos: "))
-        print("\nProducto:",producto_5[1]," Cantidad:",cantidad," Precio Unitario: $",producto_5[2])
-        total_producto = producto_5[2]*cantidad
-        subtotal +=total_producto
-        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
-        if dc == "No":
-            break
-    else:
-        print("\nEl codigo no coincide, vuelva a intentarlo\n")
-        
-print("El subtotal es: $",subtotal)
-
-iva = subtotal*(16/100)
-
-total_factura = subtotal+iva
-
-print("\nIva: $",iva,"\nTotal: $",total_factura)
+#Llamamos a la funcion incluyendo el parametro selecionado
+productos_busqueda(codigo_producto)
