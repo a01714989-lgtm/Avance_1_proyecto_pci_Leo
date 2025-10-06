@@ -1,0 +1,243 @@
+"""
+Proyecto Avance 1 python
+Simulador de Facturas
+
+El programa realiza operaciones en vista de los productos seleccionados
+dando el precio por producto, el total de los productos, el subtotal y el total 
+de la compra con iva, al final de la ejecución presenta todos estos datos en 
+formato e factura.
+
+Entradas: (La entrada del producto puede varirar en cueestion de la cantidad de 
+productos que desea comprar el usuario, se proporcionara una opcion if por si deseaa 
+agregar algo más)
+    cantidad - Numero entero
+    codigo_producto - numero entero
+
+Algoritmo :
+    
+    1.- ESTABLECER el catalogo del Producto_1, Producto_2, Producto_3, Producto_4, Producto_5 y subtotal = 0
+    2.- Desde dc = 0 hasta 1
+        2.1.- PEDIR el codigo_producto al usuario
+        2.2.- SI codigo_producto es igual a Producto_1[0]
+            2.2.1.- PEDIR cantidad de producto
+            2.2.2.- IMPRIMIR "Producto: Producto_1[1]"
+            2.2.3.- CALCULAR total_producto = Producto_1[2]*cantidad
+            2.2.4.- subtotal +=total_producto
+            2.2.5.- PEDIR al usuario si quiere añadir otro producto 
+            2.2.6.- SI  eleccion es igual a "Si"
+                2.2.6.1- dc es igual a 0
+            2.2.7.- dc es igual a 1
+
+        2.3.- SI codigo_producto es igual a Procuto_2[0]
+            2.3.1.- PEDIR cantidad de producto
+            2.3.2.- IMPRIMIR "Producto: Producto_2[1]"
+            2.3.3.- CALCULAR total_producto = Producto_2[2]*cantidad
+
+            2.3.4.- PEDIR al usuario si quiere añadir otro producto 
+            2.3.5.- SI  eleccion es igual a "Si"
+                2.3.5.1- dc es igual a 0
+            2.3.6.- dc es igual a 1
+
+        2.4.- SI codigo_producto es igual a Procuto_3[0]
+            2.4.1.- PEDIR cantidad de producto
+            2.4.2.- IMPRIMIR "Producto: Producto_3[1]"
+            2.4.3.- CALCULAR total_producto = Producto_3[2]*cantidad
+            2.4.4.- PEDIR al usuario si quiere añadir otro producto 
+            2.4.5.- SI  eleccion es igual a "Si"
+                2.4.5.1- dc es igual a 0
+            2.4.6.- dc es igual a 1
+
+        2.5.- SI codigo_producto es igual a Procuto_4[0]
+            2.5.1.- PEDIR cantidad de producto
+            2.5.2.- IMPRIMIR "Producto: Producto_4[1]"
+            2.5.3.- CALCULAR total_producto = Producto_4[2]*cantidad
+            2.5.4.- PEDIR al usuario si quiere añadir otro producto 
+            2.5.5.- SI  eleccion es igual a "Si"
+                2.5.5.1- dc es igual a 0
+            2.5.6.- dc es igual a 1
+
+        2.6.- SI codigo_producto es igual a Procuto_5[0]
+            2.6.1.- PEDIR cantidad de producto
+            2.6.2.- IMPRIMIR "Producto: Producto_5[1]"
+            2.6.3.- CALCULAR total_producto = Producto_5[2]*cantidad
+            2.6.4.- PEDIR al usuario si quiere añadir otro producto 
+            2.6.5.- SI  eleccion es igual a "Si"
+                2.6.5.1- dc es igual a 0
+            2.6.6.- dc es igual a 1
+
+        2.7.- codigo_producto no coincide con ningun producto
+            2.7.1.- IMPRIMIR "El codigo no es valido, intente de nuevo"
+            2.7.2.- dc = 0
+
+    3.- CALCULAR IVA = subtotal * (IVA = 16 / 100)
+
+    4.- CALCULAR total_factura = subtotal + IVA
+
+    5.- IMPRIMIR la factura:
+        5.1- MOSTRAR el subtotal, IVA, y total_factura
+        5.2- MOSTRAR los productos y su cantidad en la factura.
+
+SALIDA:
+Factura con los productos seleccionados, precios, subtotal, IVA y total a pagar.
+
+"""
+#Importamos la libreria math para realizar diferentes operaciones matematicas
+import math
+
+def producto1(codigo_producto):
+    if codigo_producto == producto_1[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_1[1]," Cantidad:",cantidad," Precio Unitario: $",producto_1[2])
+            total_producto = producto_1[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                return 1
+            else:
+                 return 2
+
+def producto2(codigo_producto):
+    if codigo_producto == producto_2[0]:
+
+        cantidad = int(input("\nDigite la cantidad de productos: "))
+        print("\nProducto:",producto_2[1]," Cantidad:",cantidad," Precio Unitario: $",producto_2[2])
+        total_producto = producto_2[2]*cantidad
+        subtotal +=total_producto
+        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+        if dc == "No":
+             return 1
+        else:
+             return 2
+
+def producto3(codigo_producto):
+    if codigo_producto == producto_3[0]:
+
+        cantidad = int(input("\nDigite la cantidad de productos: "))
+        print("\nProducto:",producto_3[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+        total_producto = producto_3[2]*cantidad
+        subtotal +=total_producto
+        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+        if dc == "No":
+             return 1
+        else:
+             return 2
+
+def producto4(codigo_producto):
+    if codigo_producto == producto_4[0]:
+
+        cantidad = int(input("\nDigite la cantidad de productos: "))
+        print("\nProducto:",producto_4[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+        total_producto = producto_4[2]*cantidad
+        subtotal +=total_producto
+        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+        if dc == "No":
+             return 1
+        else:
+             return 2
+
+def producto5(codigo_producto):
+    if codigo_producto == producto_5[0]:
+
+        cantidad = int(input("\nDigite la cantidad de productos: "))
+        print("\nProducto:",producto_5[1]," Cantidad:",cantidad," Precio Unitario: $",producto_5[2])
+        total_producto = producto_5[2]*cantidad
+        subtotal +=total_producto
+        dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+        if dc == "No":
+             return 1
+        else:
+             return 2
+
+#FUNCION DE BUSQUEDA DE PORDUCTOS
+
+def productos_busqueda(codigo_producto):
+
+    #CICLO DE BUSQUEDA DE LOS PRODUCTO
+
+    while True:
+
+        #SENTENCIAS IF ELSE, BUSQUEDA DE PRODUCTOS
+        if codigo_producto == producto_1[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_1[1]," Cantidad:",cantidad," Precio Unitario: $",producto_1[2])
+            total_producto = producto_1[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        elif codigo_producto == producto_2[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_2[1]," Cantidad:",cantidad," Precio Unitario: $",producto_2[2])
+            total_producto = producto_2[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        elif codigo_producto == producto_3[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_3[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+            total_producto = producto_3[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        elif codigo_producto == producto_4[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_4[1]," Cantidad:",cantidad," Precio Unitario: $",producto_3[2])
+            total_producto = producto_4[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        elif codigo_producto == producto_5[0]:
+
+            cantidad = int(input("\nDigite la cantidad de productos: "))
+            print("\nProducto:",producto_5[1]," Cantidad:",cantidad," Precio Unitario: $",producto_5[2])
+            total_producto = producto_5[2]*cantidad
+            subtotal +=total_producto
+            dc = input("\nIndique con Si o No, si desea añadir otro producto: ")
+            if dc == "No":
+                break
+        else:
+            print("\nEl codigo no coincide, vuelva a intentarlo\n")
+        
+    print("El subtotal es: $",subtotal)
+
+    #CALCULO DEL IVA
+    
+    iva = subtotal*(16/100)
+
+    #CALCULO FACTURA TOTAL
+
+    total_factura = subtotal+iva
+
+    print("\nIva: $",iva,"\nTotal: $",total_factura)
+
+
+#Establecemos los productos disponibles(listas)
+
+producto_1 = [1234567890123, "Sandwich Helado Clasico", 28]
+
+producto_2 = [4829301756248, "Takis Fuego Morados", 25.5]
+
+producto_3 = [7601938421576, "Chokis Rojas", 20.5]
+
+producto_4 = [5092846173921, "Electrolit lima limon", 32.5]
+
+producto_5 = [1837562094853, "Trident Negros chicles", 18]
+
+subtotal = 0
+
+
+#Establecemos el parametro para la funcion
+
+codigo_producto = int(input("\nDigite el codigo del producto: "))
+
+
+#Llamamos a la funcion incluyendo el parametro selecionado
+productos_busqueda(codigo_producto)
